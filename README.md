@@ -1,6 +1,6 @@
 # Miscellaneous Utilities 🚀
 
-This repo contains a variety of small projects, utilities, and documents. 
+This repo contains a variety of small projects, utilities, and documents.
 
 ## 📚 Documentation
 
