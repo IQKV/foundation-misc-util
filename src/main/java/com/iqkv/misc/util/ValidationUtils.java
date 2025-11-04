@@ -8,9 +8,6 @@ import org.apache.commons.lang3.StringUtils;
 /**
  * Utility class for common validation operations.
  * Provides static methods for validating strings, emails, collections, and other common data types.
- *
- * @author Scaffolding Framework
- * @version 1.0
  */
 @Slf4j
 public final class ValidationUtils {

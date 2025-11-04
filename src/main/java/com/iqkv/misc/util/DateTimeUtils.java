@@ -10,9 +10,6 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Utility class for common date and time operations.
  * Provides static methods for date/time formatting, parsing, and calculations.
- *
- * @author Scaffolding Framework
- * @version 1.0
  */
 @Slf4j
 public final class DateTimeUtils {
