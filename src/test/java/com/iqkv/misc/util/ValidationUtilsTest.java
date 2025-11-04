@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import java.util.Collections;
 import java.util.List;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -26,7 +27,7 @@ class ValidationUtilsTest {
 
   @ParameterizedTest
   @NullAndEmptySource
-  @ValueSource(strings = { " ", "  ", "\t", "\n", "\r\n" })
+  @ValueSource(strings = {" ", "  ", "\t", "\n", "\r\n"})
   @DisplayName("Should identify blank strings")
   void shouldIdentifyBlankStrings(String input) {
     assertThat(ValidationUtils.isBlank(input)).isTrue();
@@ -34,7 +35,7 @@ class ValidationUtilsTest {
   }
 
   @ParameterizedTest
-  @ValueSource(strings = { "hello", "a", "test with spaces", " test " })
+  @ValueSource(strings = {"hello", "a", "test with spaces", " test "})
   @DisplayName("Should identify non-blank strings")
   void shouldIdentifyNonBlankStrings(String input) {
     assertThat(ValidationUtils.isBlank(input)).isFalse();
@@ -42,7 +43,7 @@ class ValidationUtilsTest {
   }
 
   @ParameterizedTest
-  @ValueSource(strings = { "test@example.com", "user.name@domain.co.uk", "user+tag@example.org", "user123@test-domain.com", "a@b.co" })
+  @ValueSource(strings = {"test@example.com", "user.name@domain.co.uk", "user+tag@example.org", "user123@test-domain.com", "a@b.co"})
   @DisplayName("Should validate correct email formats")
   void shouldValidateCorrectEmailFormats(String email) {
     assertThat(ValidationUtils.isValidEmail(email)).isTrue();
@@ -50,14 +51,14 @@ class ValidationUtilsTest {
 
   @ParameterizedTest
   @NullAndEmptySource
-  @ValueSource(strings = { "invalid-email", "@example.com", "test@", "test.example.com", "test@.com", "test@com" })
+  @ValueSource(strings = {"invalid-email", "@example.com", "test@", "test.example.com", "test@.com", "test@com"})
   @DisplayName("Should reject invalid email formats")
   void shouldRejectInvalidEmailFormats(String email) {
     assertThat(ValidationUtils.isValidEmail(email)).isFalse();
   }
 
   @ParameterizedTest
-  @ValueSource(strings = { "+1234567890", "1234567890", "+44123456789", "447123456789", "+33123456789" })
+  @ValueSource(strings = {"+1234567890", "1234567890", "+44123456789", "447123456789", "+33123456789"})
   @DisplayName("Should validate correct phone number formats")
   void shouldValidateCorrectPhoneNumberFormats(String phoneNumber) {
     assertThat(ValidationUtils.isValidPhoneNumber(phoneNumber)).isTrue();
@@ -80,7 +81,7 @@ class ValidationUtilsTest {
   }
 
   @ParameterizedTest
-  @ValueSource(strings = { "550e8400-e29b-41d4-a716-446655440000", "6ba7b810-9dad-11d1-80b4-00c04fd430c8", "6ba7b811-9dad-11d1-80b4-00c04fd430c8", "00000000-0000-0000-0000-000000000000" })
+  @ValueSource(strings = {"550e8400-e29b-41d4-a716-446655440000", "6ba7b810-9dad-11d1-80b4-00c04fd430c8", "6ba7b811-9dad-11d1-80b4-00c04fd430c8", "00000000-0000-0000-0000-000000000000"})
   @DisplayName("Should validate correct UUID formats")
   void shouldValidateCorrectUuidFormats(String uuid) {
     assertThat(ValidationUtils.isValidUUID(uuid)).isTrue();
@@ -89,14 +90,14 @@ class ValidationUtilsTest {
   @ParameterizedTest
   @NullAndEmptySource
   @ValueSource(
-    strings = {
-      "550e8400-e29b-41d4-a716-44665544000", // Too short
-      "550e8400-e29b-41d4-a716-4466554400000", // Too long
-      "550e8400e29b41d4a716446655440000", // No hyphens
-      "550e8400-e29b-41d4-a716-44665544000g", // Invalid character
-      "550e8400-e29b-41d4-a716", // Incomplete
-      "not-a-uuid-at-all",
-    }
+      strings = {
+          "550e8400-e29b-41d4-a716-44665544000", // Too short
+          "550e8400-e29b-41d4-a716-4466554400000", // Too long
+          "550e8400e29b41d4a716446655440000", // No hyphens
+          "550e8400-e29b-41d4-a716-44665544000g", // Invalid character
+          "550e8400-e29b-41d4-a716", // Incomplete
+          "not-a-uuid-at-all",
+      }
   )
   @DisplayName("Should reject invalid UUID formats")
   void shouldRejectInvalidUuidFormats(String uuid) {
@@ -105,15 +106,15 @@ class ValidationUtilsTest {
 
   @ParameterizedTest
   @ValueSource(
-    strings = {
-      "https://example.com",
-      "http://example.com",
-      "https://www.example.com",
-      "https://subdomain.example.com",
-      "https://example.com/path",
-      "https://example.com/path?query=value",
-      "https://example.com:8080/path",
-    }
+      strings = {
+          "https://example.com",
+          "http://example.com",
+          "https://www.example.com",
+          "https://subdomain.example.com",
+          "https://example.com/path",
+          "https://example.com/path?query=value",
+          "https://example.com:8080/path",
+      }
   )
   @DisplayName("Should validate correct URL formats")
   void shouldValidateCorrectUrlFormats(String url) {
@@ -123,14 +124,14 @@ class ValidationUtilsTest {
   @ParameterizedTest
   @NullAndEmptySource
   @ValueSource(
-    strings = {
-      "ftp://example.com", // Wrong protocol
-      "example.com", // No protocol
-      "https://", // Incomplete
-      "https://.com", // Invalid domain
-      "https://example", // No TLD
-      "not-a-url",
-    }
+      strings = {
+          "ftp://example.com", // Wrong protocol
+          "example.com", // No protocol
+          "https://", // Incomplete
+          "https://.com", // Invalid domain
+          "https://example", // No TLD
+          "not-a-url",
+      }
   )
   @DisplayName("Should reject invalid URL formats")
   void shouldRejectInvalidUrlFormats(String url) {
@@ -176,7 +177,7 @@ class ValidationUtilsTest {
   }
 
   @ParameterizedTest
-  @ValueSource(strings = { "abc123", "ABC123", "test123TEST", "123abc" })
+  @ValueSource(strings = {"abc123", "ABC123", "test123TEST", "123abc"})
   @DisplayName("Should validate alphanumeric strings")
   void shouldValidateAlphanumericStrings(String input) {
     assertThat(ValidationUtils.isAlphanumeric(input)).isTrue();
@@ -184,14 +185,14 @@ class ValidationUtilsTest {
 
   @ParameterizedTest
   @NullAndEmptySource
-  @ValueSource(strings = { " ", "abc 123", "abc-123", "abc_123", "abc@123", "!" })
+  @ValueSource(strings = {" ", "abc 123", "abc-123", "abc_123", "abc@123", "!"})
   @DisplayName("Should reject non-alphanumeric strings")
   void shouldRejectNonAlphanumericStrings(String input) {
     assertThat(ValidationUtils.isAlphanumeric(input)).isFalse();
   }
 
   @ParameterizedTest
-  @ValueSource(strings = { "abc", "ABC", "abcDEF", "test" })
+  @ValueSource(strings = {"abc", "ABC", "abcDEF", "test"})
   @DisplayName("Should validate alphabetic strings")
   void shouldValidateAlphabeticStrings(String input) {
     assertThat(ValidationUtils.isAlphabetic(input)).isTrue();
@@ -199,14 +200,14 @@ class ValidationUtilsTest {
 
   @ParameterizedTest
   @NullAndEmptySource
-  @ValueSource(strings = { " ", "abc123", "abc ", "abc-def", "123" })
+  @ValueSource(strings = {" ", "abc123", "abc ", "abc-def", "123"})
   @DisplayName("Should reject non-alphabetic strings")
   void shouldRejectNonAlphabeticStrings(String input) {
     assertThat(ValidationUtils.isAlphabetic(input)).isFalse();
   }
 
   @ParameterizedTest
-  @ValueSource(strings = { "123", "0", "999", "1234567890" })
+  @ValueSource(strings = {"123", "0", "999", "1234567890"})
   @DisplayName("Should validate numeric strings")
   void shouldValidateNumericStrings(String input) {
     assertThat(ValidationUtils.isNumeric(input)).isTrue();
@@ -214,14 +215,14 @@ class ValidationUtilsTest {
 
   @ParameterizedTest
   @NullAndEmptySource
-  @ValueSource(strings = { " ", "123abc", "12.34", "123 ", "-123", "+123" })
+  @ValueSource(strings = {" ", "123abc", "12.34", "123 ", "-123", "+123"})
   @DisplayName("Should reject non-numeric strings")
   void shouldRejectNonNumericStrings(String input) {
     assertThat(ValidationUtils.isNumeric(input)).isFalse();
   }
 
   @ParameterizedTest
-  @ValueSource(strings = { "Password123!", "MyStr0ng@Pass", "C0mplex#Password", "Secure$Pass1" })
+  @ValueSource(strings = {"Password123!", "MyStr0ng@Pass", "C0mplex#Password", "Secure$Pass1"})
   @DisplayName("Should validate strong passwords")
   void shouldValidateStrongPasswords(String password) {
     assertThat(ValidationUtils.isStrongPassword(password)).isTrue();
@@ -230,16 +231,16 @@ class ValidationUtilsTest {
   @ParameterizedTest
   @NullAndEmptySource
   @ValueSource(
-    strings = {
-      "short", // Too short
-      "password", // No uppercase, no digit, no special char
-      "PASSWORD", // No lowercase, no digit, no special char
-      "Password", // No digit, no special char
-      "Password123", // No special char
-      "password123!", // No uppercase
-      "PASSWORD123!", // No lowercase
-      "Password!", // No digit
-    }
+      strings = {
+          "short", // Too short
+          "password", // No uppercase, no digit, no special char
+          "PASSWORD", // No lowercase, no digit, no special char
+          "Password", // No digit, no special char
+          "Password123", // No special char
+          "password123!", // No uppercase
+          "PASSWORD123!", // No lowercase
+          "Password!", // No digit
+      }
   )
   @DisplayName("Should reject weak passwords")
   void shouldRejectWeakPasswords(String password) {

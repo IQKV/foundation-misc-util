@@ -5,11 +5,11 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Random;
 import java.util.stream.Collectors;
+
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Utility class for common string operations.
- * Provides static methods for string manipulation, formatting, and generation.
+ * Utility class for common string operations. Provides static methods for string manipulation, formatting, and generation.
  */
 @Slf4j
 public final class StringUtils {
@@ -214,10 +214,10 @@ public final class StringUtils {
   /**
    * Masks part of a string with asterisks, keeping visible characters at start and end.
    *
-   * @param str           The string to mask
-   * @param visibleStart  Number of characters to keep visible at the start
-   * @param visibleEnd    Number of characters to keep visible at the end
-   * @param maskChar      Character to use for masking
+   * @param str          The string to mask
+   * @param visibleStart Number of characters to keep visible at the start
+   * @param visibleEnd   Number of characters to keep visible at the end
+   * @param maskChar     Character to use for masking
    * @return Masked string
    */
   public static String mask(String str, int visibleStart, int visibleEnd, char maskChar) {

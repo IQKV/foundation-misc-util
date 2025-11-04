@@ -2,12 +2,12 @@ package com.iqkv.misc.util;
 
 import java.util.Collection;
 import java.util.regex.Pattern;
+
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * Utility class for common validation operations.
- * Provides static methods for validating strings, emails, collections, and other common data types.
+ * Utility class for common validation operations. Provides static methods for validating strings, emails, collections, and other common data types.
  */
 @Slf4j
 public final class ValidationUtils {
@@ -195,8 +195,7 @@ public final class ValidationUtils {
   }
 
   /**
-   * Validates a password strength based on common criteria.
-   * Requires at least 8 characters, one uppercase, one lowercase, one digit, and one special character.
+   * Validates a password strength based on common criteria. Requires at least 8 characters, one uppercase, one lowercase, one digit, and one special character.
    *
    * @param password The password to validate
    * @return true if the password meets strength criteria, false otherwise
@@ -215,8 +214,7 @@ public final class ValidationUtils {
   }
 
   /**
-   * Sanitizes a string by removing potentially dangerous characters.
-   * Useful for preventing XSS attacks in user input.
+   * Sanitizes a string by removing potentially dangerous characters. Useful for preventing XSS attacks in user input.
    *
    * @param input The input string to sanitize
    * @return Sanitized string with dangerous characters removed
