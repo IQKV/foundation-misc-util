@@ -237,7 +237,7 @@ public final class ValidationUtils {
     if (objects == null) {
       return false;
     }
-    for (Object obj : objects) {
+    for (final Object obj : objects) {
       if (obj == null) {
         return false;
       }
