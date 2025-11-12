@@ -301,7 +301,7 @@ public class ProductController {
                 product.getId(), product.getName());
                 
             return ResponseEntity.ok(new ProductResponse(product));
-        } catch (Exception ex) {
+        } catch (final Exception ex) {
             log.error("Error fetching product: productId={}, error={}", 
                 id, ex.getMessage(), ex);
             throw ex;

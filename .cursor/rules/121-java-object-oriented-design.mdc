@@ -307,7 +307,7 @@ public class BirdLSPViolation {
     public static void main(String args) {
         try {
             letTheBirdFly(new Penguin());
-        } catch (UnsupportedOperationException e) {
+        } catch (final UnsupportedOperationException e) {
             System.err.println(e.getMessage());
         }
     }
@@ -2204,7 +2204,7 @@ public class NumberProcessor {
             while (true) {  // Using exception for loop termination
                 process(numbers[i++]);
             }
-        } catch (ArrayIndexOutOfBoundsException e) {
+        } catch (final ArrayIndexOutOfBoundsException e) {
             // Using exception for normal control flow - bad!
         }
     }
@@ -2231,7 +2231,7 @@ public class FileProcessor {
         try {
             // File operations that might fail due to external factors
             Files.readAllLines(Paths.get(filename));
-        } catch (IOException e) {
+        } catch (final IOException e) {
             // Wrap in domain-specific checked exception
             throw new FileProcessingException("Failed to process file: " + filename, e);
         }
@@ -2275,7 +2275,7 @@ public class FileProcessor {
     public void processFile(String filename) {
         try {
             Files.readAllLines(Paths.get(filename));
-        } catch (IOException e) {
+        } catch (final IOException e) {
             // Should be checked exception so caller can handle
             throw new RuntimeException("File processing failed", e);
         }
@@ -2463,7 +2463,7 @@ public class FileManager {
     public Optional<String> readFileContent(String filename) {
         try {
             return Optional.of(Files.readString(Paths.get(filename)));
-        } catch (IOException e) {
+        } catch (final IOException e) {
             // Log the exception with context
             logger.warn("Failed to read file: {}", filename, e);
             return Optional.empty();  // Return meaningful result
@@ -2474,7 +2474,7 @@ public class FileManager {
         try {
             Files.writeString(Paths.get(filename), content);
             logger.info("Successfully saved content to file: {}", filename);
-        } catch (IOException e) {
+        } catch (final IOException e) {
             // Re-throw as domain-specific exception with context
             throw new FileOperationException("Failed to save content to file: " + filename, e);
         }
@@ -2484,7 +2484,7 @@ public class FileManager {
         for (String tempFile : tempFiles) {
             try {
                 Files.deleteIfExists(Paths.get(tempFile));
-            } catch (IOException e) {
+            } catch (final IOException e) {
                 // Log but continue with other files
                 logger.warn("Failed to delete temporary file: {}", tempFile, e);
             }
@@ -2506,7 +2506,7 @@ public class FileManager {
     public String readFileContent(String filename) {
         try {
             return Files.readString(Paths.get(filename));
-        } catch (IOException e) {
+        } catch (final IOException e) {
             // Silently ignoring exception - very bad!
         }
         return null;  // Caller has no idea what went wrong
@@ -2515,7 +2515,7 @@ public class FileManager {
     public void saveToFile(String filename, String content) {
         try {
             Files.writeString(Paths.get(filename), content);
-        } catch (IOException e) {
+        } catch (final IOException e) {
             // Empty catch block - hiding the problem
         }
     }
@@ -2525,7 +2525,7 @@ public class FileManager {
             try {
                 // Some file processing
                 Files.readString(Paths.get(file));
-            } catch (Exception e) {
+            } catch (final Exception e) {
                 // Catching Exception is too broad, and then ignoring it
             }
         }

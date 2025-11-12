@@ -142,7 +142,7 @@ public final class DateTimeUtils {
     }
     try {
       return localDateTime.format(formatter);
-    } catch (Exception e) {
+    } catch (final Exception e) {
       log.warn("Failed to format LocalDateTime: {}", e.getMessage());
       return null;
     }
@@ -181,7 +181,7 @@ public final class DateTimeUtils {
     }
     try {
       return LocalDateTime.parse(dateTimeString.trim(), formatter);
-    } catch (DateTimeParseException e) {
+    } catch (final DateTimeParseException e) {
       log.warn("Failed to parse date/time string '{}': {}", dateTimeString, e.getMessage());
       return null;
     }
