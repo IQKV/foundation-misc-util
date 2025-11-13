@@ -2481,7 +2481,7 @@ public class FileManager {
     }
 
     public void cleanupTempFiles(List<String> tempFiles) {
-        for (String tempFile : tempFiles) {
+        for (final String tempFile : tempFiles) {
             try {
                 Files.deleteIfExists(Paths.get(tempFile));
             } catch (final IOException e) {
@@ -2521,7 +2521,7 @@ public class FileManager {
     }
 
     public void processFiles(List<String> files) {
-        for (String file : files) {
+        for (final String file : files) {
             try {
                 // Some file processing
                 Files.readString(Paths.get(file));
