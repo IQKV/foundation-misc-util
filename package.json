@@ -44,7 +44,7 @@
     "stylelint": "^17.3.0",
     "stylelint-config-standard-scss": "^17.0.0"
   },
-  "packageManager": "pnpm@10.29.1",
+  "packageManager": "pnpm@10.29.3",
   "engines": {
     "node": ">=22.15.0"
   }
