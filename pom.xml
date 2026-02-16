@@ -50,6 +50,10 @@
         <junit-jupiter.version>5.12.2</junit-jupiter.version>
         <assertj.version>3.27.6</assertj.version>
         
+        <!-- Checkstyle versions -->
+        <iqkv.checkstyle.version>0.24.0</iqkv.checkstyle.version>
+        <puppycrawl.checkstyle.version>13.2.0</puppycrawl.checkstyle.version>
+        
         <!-- Plugin versions -->
         <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
         <maven-resources-plugin.version>3.4.0</maven-resources-plugin.version>
@@ -114,6 +118,32 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-checkstyle-plugin</artifactId>
                     <version>${maven-checkstyle-plugin.version}</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>com.puppycrawl.tools</groupId>
+                            <artifactId>checkstyle</artifactId>
+                            <version>${puppycrawl.checkstyle.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>com.iqkv</groupId>
+                            <artifactId>checkstyle-config</artifactId>
+                            <version>${iqkv.checkstyle.version}</version>
+                        </dependency>
+                    </dependencies>
+                    <configuration>
+                        <sourceDirectories>${basedir}/src</sourceDirectories>
+                        <configLocation>maven-project-common-checkstyle.xml</configLocation>
+                        <includeTestSourceDirectory>true</includeTestSourceDirectory>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>validate</id>
+                            <phase>validate</phase>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
