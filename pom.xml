@@ -48,7 +48,7 @@
         <lombok.version>1.18.42</lombok.version>
         <slf4j.version>2.0.17</slf4j.version>
         <junit-jupiter.version>5.12.2</junit-jupiter.version>
-        <assertj.version>3.27.6</assertj.version>
+        <assertj.version>3.27.7</assertj.version>
         
         <!-- Checkstyle versions -->
         <iqkv.checkstyle.version>0.24.0</iqkv.checkstyle.version>
