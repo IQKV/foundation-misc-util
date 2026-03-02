@@ -52,7 +52,7 @@
         
         <!-- Checkstyle versions -->
         <iqkv.checkstyle.version>0.24.0</iqkv.checkstyle.version>
-        <puppycrawl.checkstyle.version>13.2.0</puppycrawl.checkstyle.version>
+        <puppycrawl.checkstyle.version>13.3.0</puppycrawl.checkstyle.version>
         
         <!-- Plugin versions -->
         <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
