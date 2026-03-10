@@ -143,38 +143,38 @@ api → application → domain ← infrastructure
 
 ```yaml
 agent_review_workflow:
-  triggers:
-    - pull_request_opened
-    - pull_request_synchronized
+    triggers:
+        - pull_request_opened
+        - pull_request_synchronized
 
-  review_checklist:
-    - code_quality: "Java Pro Agent validates code standards"
-    - security: "Security Agent checks for vulnerabilities"
-    - performance: "Performance impact analysis"
-    - testing: "Test coverage and quality validation"
-    - documentation: "Documentation completeness check"
+    review_checklist:
+        - code_quality: "Java Pro Agent validates code standards"
+        - security: "Security Agent checks for vulnerabilities"
+        - performance: "Performance impact analysis"
+        - testing: "Test coverage and quality validation"
+        - documentation: "Documentation completeness check"
 ```
 
 #### Automated Tasks
 
 ```yaml
 automated_tasks:
-  daily:
-    - dependency_updates: "Check for security updates and CVE scanning"
-    - code_quality_metrics: "Generate quality reports with SonarQube"
-    - performance_benchmarks: "Run JMH benchmarks and load tests"
-    - virtual_thread_analysis: "Monitor virtual thread performance"
+    daily:
+        - dependency_updates: "Check for security updates and CVE scanning"
+        - code_quality_metrics: "Generate quality reports with SonarQube"
+        - performance_benchmarks: "Run JMH benchmarks and load tests"
+        - virtual_thread_analysis: "Monitor virtual thread performance"
 
-  weekly:
-    - architecture_review: "Assess architectural debt and modernization opportunities"
-    - security_scan: "Comprehensive security analysis with OWASP tools"
-    - documentation_audit: "Update documentation gaps and API docs"
-    - jvm_optimization: "Analyze GC logs and memory usage patterns"
+    weekly:
+        - architecture_review: "Assess architectural debt and modernization opportunities"
+        - security_scan: "Comprehensive security analysis with OWASP tools"
+        - documentation_audit: "Update documentation gaps and API docs"
+        - jvm_optimization: "Analyze GC logs and memory usage patterns"
 
-  monthly:
-    - spring_boot_updates: "Evaluate Spring Boot version upgrades"
-    - java_feature_adoption: "Assess new Java feature adoption opportunities"
-    - performance_baseline: "Establish performance baselines and trends"
+    monthly:
+        - spring_boot_updates: "Evaluate Spring Boot version upgrades"
+        - java_feature_adoption: "Assess new Java feature adoption opportunities"
+        - performance_baseline: "Establish performance baselines and trends"
 ```
 
 ## 📋 Development Standards
@@ -376,18 +376,18 @@ Brief description of changes and motivation.
 
 ```yaml
 review_requirements:
-  mandatory_reviews: 2
-  required_reviewers:
-    - code_owner: "Module maintainer approval"
-    - security_review: "For security-related changes"
-    - architecture_review: "For significant architectural changes"
+    mandatory_reviews: 2
+    required_reviewers:
+        - code_owner: "Module maintainer approval"
+        - security_review: "For security-related changes"
+        - architecture_review: "For significant architectural changes"
 
-  blocking_conditions:
-    - failing_tests: "All tests must pass"
-    - merge_conflicts: "Must be up to date with target branch"
-    - missing_documentation: "Public APIs must be documented"
-    - security_vulnerabilities: "No known security issues"
-    - performance_regression: "No significant performance degradation"
+    blocking_conditions:
+        - failing_tests: "All tests must pass"
+        - merge_conflicts: "Must be up to date with target branch"
+        - missing_documentation: "Public APIs must be documented"
+        - security_vulnerabilities: "No known security issues"
+        - performance_regression: "No significant performance degradation"
 ```
 
 ### Release Management
@@ -410,24 +410,24 @@ Examples:
 
 ```yaml
 release_workflow:
-  preparation:
-    - create_release_branch: "release/vX.Y.Z"
-    - update_version_numbers: "Maven versions update"
-    - run_full_test_suite: "All tests must pass"
-    - generate_changelog: "Document all changes"
-    - security_scan: "Vulnerability assessment"
+    preparation:
+        - create_release_branch: "release/vX.Y.Z"
+        - update_version_numbers: "Maven versions update"
+        - run_full_test_suite: "All tests must pass"
+        - generate_changelog: "Document all changes"
+        - security_scan: "Vulnerability assessment"
 
-  release:
-    - merge_to_main: "Create release commit"
-    - create_git_tag: "Tag with version number"
-    - build_artifacts: "Create deployable artifacts"
-    - deploy_to_staging: "Staging environment validation"
-    - deploy_to_production: "Production deployment"
+    release:
+        - merge_to_main: "Create release commit"
+        - create_git_tag: "Tag with version number"
+        - build_artifacts: "Create deployable artifacts"
+        - deploy_to_staging: "Staging environment validation"
+        - deploy_to_production: "Production deployment"
 
-  post_release:
-    - merge_back_to_develop: "Include any release fixes"
-    - update_documentation: "Release notes and docs"
-    - notify_stakeholders: "Communication plan"
+    post_release:
+        - merge_back_to_develop: "Include any release fixes"
+        - update_documentation: "Release notes and docs"
+        - notify_stakeholders: "Communication plan"
 ```
 
 ## 🔒 Security Guidelines
@@ -436,22 +436,22 @@ release_workflow:
 
 ```yaml
 security_requirements:
-  code_review:
-    - input_validation: "All user inputs validated"
-    - output_encoding: "XSS prevention measures"
-    - authentication: "Proper authentication checks"
-    - authorization: "Access control validation"
-    - data_protection: "Sensitive data handling"
+    code_review:
+        - input_validation: "All user inputs validated"
+        - output_encoding: "XSS prevention measures"
+        - authentication: "Proper authentication checks"
+        - authorization: "Access control validation"
+        - data_protection: "Sensitive data handling"
 
-  dependencies:
-    - vulnerability_scanning: "Regular dependency scans"
-    - license_compliance: "License compatibility check"
-    - update_policy: "Security update procedures"
+    dependencies:
+        - vulnerability_scanning: "Regular dependency scans"
+        - license_compliance: "License compatibility check"
+        - update_policy: "Security update procedures"
 
-  infrastructure:
-    - secrets_management: "No hardcoded secrets"
-    - network_security: "Secure communication protocols"
-    - logging_security: "No sensitive data in logs"
+    infrastructure:
+        - secrets_management: "No hardcoded secrets"
+        - network_security: "Secure communication protocols"
+        - logging_security: "No sensitive data in logs"
 ```
 
 ### Secrets Management
@@ -473,26 +473,26 @@ export API_KEY="${EXTERNAL_API_KEY}"
 
 ```yaml
 quality_gates:
-  coverage:
-    line_coverage: ">= 90%"
-    branch_coverage: ">= 85%"
-    mutation_coverage: ">= 80%"
+    coverage:
+        line_coverage: ">= 90%"
+        branch_coverage: ">= 85%"
+        mutation_coverage: ">= 80%"
 
-  complexity:
-    cyclomatic_complexity: "<= 10"
-    cognitive_complexity: "<= 15"
-    class_size: "<= 500 lines"
-    method_length: "<= 50 lines"
+    complexity:
+        cyclomatic_complexity: "<= 10"
+        cognitive_complexity: "<= 15"
+        class_size: "<= 500 lines"
+        method_length: "<= 50 lines"
 
-  maintainability:
-    duplication: "<= 3%"
-    technical_debt_ratio: "<= 5%"
-    maintainability_rating: "A"
+    maintainability:
+        duplication: "<= 3%"
+        technical_debt_ratio: "<= 5%"
+        maintainability_rating: "A"
 
-  reliability:
-    bug_density: "<= 0.1%"
-    vulnerability_density: "0"
-    reliability_rating: "A"
+    reliability:
+        bug_density: "<= 0.1%"
+        vulnerability_density: "0"
+        reliability_rating: "A"
 ```
 
 ### Automated Quality Checks
@@ -537,85 +537,85 @@ quality_gates:
 name: CI/CD Pipeline
 
 on:
-  push:
-    branches: [main, develop]
-  pull_request:
-    branches: [main, develop]
+    push:
+        branches: [main, develop]
+    pull_request:
+        branches: [main, develop]
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Set up JDK 21
-        uses: actions/setup-java@v4
-        with:
-          java-version: "21"
-          distribution: "temurin"
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - name: Set up JDK 21
+              uses: actions/setup-java@v4
+              with:
+                  java-version: "21"
+                  distribution: "temurin"
 
-      - name: Cache Maven dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.m2
-          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+            - name: Cache Maven dependencies
+              uses: actions/cache@v3
+              with:
+                  path: ~/.m2
+                  key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
 
-      - name: Run tests
-        run: ./mvnw clean verify
+            - name: Run tests
+              run: ./mvnw clean verify
 
-      - name: Upload coverage reports
-        uses: codecov/codecov-action@v3
+            - name: Upload coverage reports
+              uses: codecov/codecov-action@v3
 
-      - name: Security scan
-        run: ./mvnw org.owasp:dependency-check-maven:check
+            - name: Security scan
+              run: ./mvnw org.owasp:dependency-check-maven:check
 
-  build:
-    needs: test
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    steps:
-      - name: Build Docker image
-        run: docker build -t app:${{ github.sha }} .
+    build:
+        needs: test
+        runs-on: ubuntu-latest
+        if: github.ref == 'refs/heads/main'
+        steps:
+            - name: Build Docker image
+              run: docker build -t app:${{ github.sha }} .
 
-      - name: Push to registry
-        run: docker push app:${{ github.sha }}
+            - name: Push to registry
+              run: docker push app:${{ github.sha }}
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment: production
-    if: github.ref == 'refs/heads/main'
-    steps:
-      - name: Deploy to production
-        run: echo "Deploying to production"
+    deploy:
+        needs: build
+        runs-on: ubuntu-latest
+        environment: production
+        if: github.ref == 'refs/heads/main'
+        steps:
+            - name: Deploy to production
+              run: echo "Deploying to production"
 ```
 
 ### Environment Management
 
 ```yaml
 environments:
-  local:
-    description: "Developer workstation"
-    database: "H2 in-memory"
-    external_services: "Mocked"
-    logging: "DEBUG level"
+    local:
+        description: "Developer workstation"
+        database: "H2 in-memory"
+        external_services: "Mocked"
+        logging: "DEBUG level"
 
-  development:
-    description: "Shared development environment"
-    database: "PostgreSQL (dev instance)"
-    external_services: "Development APIs"
-    logging: "INFO level"
+    development:
+        description: "Shared development environment"
+        database: "PostgreSQL (dev instance)"
+        external_services: "Development APIs"
+        logging: "INFO level"
 
-  staging:
-    description: "Production-like testing"
-    database: "PostgreSQL (staging)"
-    external_services: "Production APIs (test mode)"
-    logging: "WARN level"
+    staging:
+        description: "Production-like testing"
+        database: "PostgreSQL (staging)"
+        external_services: "Production APIs (test mode)"
+        logging: "WARN level"
 
-  production:
-    description: "Live production environment"
-    database: "PostgreSQL (production cluster)"
-    external_services: "Production APIs"
-    logging: "ERROR level"
+    production:
+        description: "Live production environment"
+        database: "PostgreSQL (production cluster)"
+        external_services: "Production APIs"
+        logging: "ERROR level"
 ```
 
 ## 📚 Documentation Standards
@@ -696,42 +696,42 @@ public class UserController {
 
 ```yaml
 intervention_triggers:
-  high_priority:
-    - security_vulnerability: "Immediate action required"
-    - build_failure: "Blocks development progress"
-    - production_issue: "Service disruption"
-    - data_corruption: "Risk of data loss"
+    high_priority:
+        - security_vulnerability: "Immediate action required"
+        - build_failure: "Blocks development progress"
+        - production_issue: "Service disruption"
+        - data_corruption: "Risk of data loss"
 
-  medium_priority:
-    - code_quality_degradation: "Technical debt accumulation"
-    - performance_regression: "User experience impact"
-    - test_failure: "Reliability concerns"
-    - dependency_update: "Security or feature updates"
+    medium_priority:
+        - code_quality_degradation: "Technical debt accumulation"
+        - performance_regression: "User experience impact"
+        - test_failure: "Reliability concerns"
+        - dependency_update: "Security or feature updates"
 
-  low_priority:
-    - documentation_gap: "Improved maintainability"
-    - code_optimization: "Performance improvement"
-    - refactoring_opportunity: "Code quality enhancement"
+    low_priority:
+        - documentation_gap: "Improved maintainability"
+        - code_optimization: "Performance improvement"
+        - refactoring_opportunity: "Code quality enhancement"
 ```
 
 ### Decision Matrix
 
 ```yaml
 decision_criteria:
-  impact_assessment:
-    - user_impact: "How many users affected?"
-    - business_impact: "Revenue or operation impact?"
-    - technical_impact: "System stability and performance?"
+    impact_assessment:
+        - user_impact: "How many users affected?"
+        - business_impact: "Revenue or operation impact?"
+        - technical_impact: "System stability and performance?"
 
-  effort_estimation:
-    - development_effort: "Time required for implementation"
-    - testing_effort: "Validation and quality assurance"
-    - deployment_effort: "Release and rollout complexity"
+    effort_estimation:
+        - development_effort: "Time required for implementation"
+        - testing_effort: "Validation and quality assurance"
+        - deployment_effort: "Release and rollout complexity"
 
-  risk_evaluation:
-    - implementation_risk: "Likelihood of issues during development"
-    - deployment_risk: "Risk of production problems"
-    - rollback_capability: "Ability to revert changes"
+    risk_evaluation:
+        - implementation_risk: "Likelihood of issues during development"
+        - deployment_risk: "Risk of production problems"
+        - rollback_capability: "Ability to revert changes"
 ```
 
 This repository guidelines document serves as a comprehensive reference for maintaining high-quality, secure, and well-organized codebases while facilitating effective collaboration between
