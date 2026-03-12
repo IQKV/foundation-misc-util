@@ -1,5 +1,5 @@
 {
-    "name": "@iqkv/misc-util",
+    "name": "@iqkv/foundation-misc-util",
     "version": "0.24.0",
     "private": true,
     "description": "Provide an optional Git commit hooks.",
