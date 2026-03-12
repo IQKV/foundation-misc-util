@@ -1,4 +1,4 @@
-package com.iqkv.misc.util;
+package com.iqkv.foundation.misc.util;
 
 import java.text.Normalizer;
 import java.util.Arrays;
