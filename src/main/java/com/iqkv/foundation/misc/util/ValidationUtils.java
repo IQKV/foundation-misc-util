@@ -3,9 +3,9 @@ package com.iqkv.foundation.misc.util;
 import java.util.Collection;
 import java.util.regex.Pattern;
 
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.apache.commons.lang3.StringUtils;
 
 /**
  * Utility class for common validation operations. Provides static methods for validating strings, emails, collections, and other common data types.
