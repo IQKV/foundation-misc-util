@@ -6,13 +6,15 @@ import java.util.Collection;
 import java.util.Random;
 import java.util.stream.Collectors;
 
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Utility class for common string operations. Provides static methods for string manipulation, formatting, and generation.
  */
-@Slf4j
 public final class StringUtils {
+
+  private static final Logger log = LoggerFactory.getLogger(StringUtils.class);
 
   private static final String ALPHANUMERIC_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
   private static final String NUMERIC_CHARS = "0123456789";

@@ -11,13 +11,15 @@ import java.time.format.DateTimeParseException;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Utility class for common date and time operations. Provides static methods for date/time formatting, parsing, and calculations.
  */
-@Slf4j
 public final class DateTimeUtils {
+
+  private static final Logger log = LoggerFactory.getLogger(DateTimeUtils.class);
 
   // Common date/time formatters
   public static final DateTimeFormatter ISO_LOCAL_DATE_TIME = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");

@@ -3,14 +3,16 @@ package com.iqkv.foundation.misc.util;
 import java.util.Collection;
 import java.util.regex.Pattern;
 
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.commons.lang3.StringUtils;
 
 /**
  * Utility class for common validation operations. Provides static methods for validating strings, emails, collections, and other common data types.
  */
-@Slf4j
 public final class ValidationUtils {
+
+  private static final Logger log = LoggerFactory.getLogger(ValidationUtils.class);
 
   // Email validation regex pattern
   private static final Pattern EMAIL_PATTERN = Pattern.compile("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
