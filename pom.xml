@@ -61,7 +61,6 @@
         <maven-surefire-plugin.version>3.5.5</maven-surefire-plugin.version>
         <jacoco-maven-plugin.version>0.8.14</jacoco-maven-plugin.version>
         <git-commit-id-plugin.version>9.1.0</git-commit-id-plugin.version>
-        <pl.project13.git-commit-id-plugin.version>4.9.10</pl.project13.git-commit-id-plugin.version>
     </properties>
     <dependencies>
         <dependency>
@@ -158,11 +157,6 @@
                     <artifactId>git-commit-id-maven-plugin</artifactId>
                     <version>${git-commit-id-plugin.version}</version>
                 </plugin>
-                <plugin>
-                    <groupId>pl.project13.maven</groupId>
-                    <artifactId>git-commit-id-plugin</artifactId>
-                    <version>${pl.project13.git-commit-id-plugin.version}</version>
-                </plugin>
             </plugins>
         </pluginManagement>
         
@@ -256,10 +250,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-deploy-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>pl.project13.maven</groupId>
-                <artifactId>git-commit-id-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
