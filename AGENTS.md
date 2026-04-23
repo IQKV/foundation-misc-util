@@ -50,11 +50,11 @@ api → application → domain ← infrastructure
 
 #### 1. Java Pro Agent (`java-pro.md`)
 
-**Purpose**: Expert Java 21+ development with Spring Boot 3.x and modern JVM features
+**Purpose**: Expert Java 25+ development with Spring Boot 4.x and modern JVM features
 **Responsibilities**:
 
 - Modern Java feature implementation (virtual threads, pattern matching, records)
-- Spring Boot 3.x architecture and best practices
+- Spring Boot 4.x architecture and best practices
 - Performance optimization and JVM tuning
 - Code generation and refactoring with modern patterns
 - Testing strategy development and implementation
