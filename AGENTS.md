@@ -133,25 +133,29 @@ Operations NOT requiring approval: reading files, explaining concepts, running t
 
 ### When presenting changes
 
-```markdown
+````markdown
 ## Proposed Changes
 
 **Goal**: one sentence
 
 **Files**:
+
 - `src/main/.../StringUtils.java` — add `foo(String)` method
 - `src/test/.../StringUtilsTest.java` — add corresponding tests
 
 **New method signature**:
+
 ```java
 /**
  * Does X. Returns Y if input is null.
  */
 public static String foo(String input) { ... }
 ```
+````
 
 Proceed?
-```
+
+````
 
 ## Commit Standards
 
@@ -188,7 +192,7 @@ Examples:
 # Node tooling (formatting only — not part of Java build)
 pnpm formatter:check   # check formatting
 pnpm formatter:write   # auto-format
-```
+````
 
 ## Verification After Changes
 
