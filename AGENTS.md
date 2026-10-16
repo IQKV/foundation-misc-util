@@ -235,6 +235,34 @@ pnpm formatter:check   # check formatting
 pnpm formatter:write   # auto-format
 ````
 
+## Evaluation
+
+How we judge whether an agent task in this repository is actually done. Evaluation is evidence-based — a claim without the command and its observed result is not a pass.
+
+> This section starts minimal and grows with the repository. Add a gate only when a change type repeatedly slips through without it.
+
+### Definition of done
+
+A task is evaluated as done only when all of the following hold:
+
+- Every gate required by the change type below has run and passed.
+- The final report names the exact command(s) run and the observed result (pass/fail) — per AI Agent Development Guidelines.
+- No required gate was skipped silently. A gate that could not run is reported as a gap, never as a pass.
+
+### Required gates by change type
+
+| Change type | Required gates |
+| --- | --- |
+| Any change | `./mvnw -q compile`, then the narrowest targeted `./mvnw test -Dtest=ClassName` |
+| New or changed utility method | Unit tests for the method, then full `./mvnw verify` |
+| Parsing, date-time or edge-case logic | Unit tests covering the edges, then full `./mvnw verify` |
+| Dependency or build config | Full `./mvnw verify` |
+| Formatting or docs (`AGENTS.md`) only | `pnpm formatter:check`; no Java code gate — state that none applies |
+
+### Ordering
+
+Run the narrowest relevant gate first, then the full set for the change type. On the first failure, stop and report it — do not continue on an unproven base (see Execution Discipline).
+
 ## Verification After Changes
 
 Run before presenting a result:
