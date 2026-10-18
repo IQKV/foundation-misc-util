@@ -251,13 +251,13 @@ A task is evaluated as done only when all of the following hold:
 
 ### Required gates by change type
 
-| Change type | Required gates |
-| --- | --- |
-| Any change | `./mvnw -q compile`, then the narrowest targeted `./mvnw test -Dtest=ClassName` |
-| New or changed utility method | Unit tests for the method, then full `./mvnw verify` |
-| Parsing, date-time or edge-case logic | Unit tests covering the edges, then full `./mvnw verify` |
-| Dependency or build config | Full `./mvnw verify` |
-| Formatting or docs (`AGENTS.md`) only | `pnpm formatter:check`; no Java code gate — state that none applies |
+| Change type                           | Required gates                                                                  |
+| ------------------------------------- | ------------------------------------------------------------------------------- |
+| Any change                            | `./mvnw -q compile`, then the narrowest targeted `./mvnw test -Dtest=ClassName` |
+| New or changed utility method         | Unit tests for the method, then full `./mvnw verify`                            |
+| Parsing, date-time or edge-case logic | Unit tests covering the edges, then full `./mvnw verify`                        |
+| Dependency or build config            | Full `./mvnw verify`                                                            |
+| Formatting or docs (`AGENTS.md`) only | `pnpm formatter:check`; no Java code gate — state that none applies             |
 
 ### Ordering
 
